@@ -1,0 +1,34 @@
+{
+  "schema_name": "Hagiographic Entity Schema",
+  "schema_version": "2.0",
+  "description": "Entity extraction schema for historical and hagiographic texts, distinguishing persons, groups, institutions, places, objects, and divine entities.",
+  "model_version": "GhentCDH/Latin-Hagiography-NER",
+  "entities": {
+    "person": {
+      "description": "Any human being referred to by a personal name, kinship term (e.g., father, mother, son), social or institutional role (e.g., king, duke, monk, saint), or profession (e.g., blacksmith, writer). Includes saints, unless referring to major divine figures such as God, Christ, Mary, angels, or the Holy Spirit.",
+      "threshold": 0.3
+    },
+    "group": {
+      "description": "A collective entity composed of multiple people, expressed through collective nouns, adjectives, or pronouns (e.g., people, crowd, brothers, sisters, community, all, the faithful).",
+      "threshold": 0.3
+    },
+    "object": {
+      "description": "Inanimate objects, material items, bodily substances, or animals. Includes relics, garments, books, tears, oil, bodies, animals, and other tangible non-human, non-place entities.",
+      "threshold": 0.3
+    },
+    "divine_entity": {
+      "description": "Divine or supernatural beings and forces, including God, Christ, the Holy Spirit, angels, Mary, Joseph, and expressions of divine action or presence (e.g., divine mercy, divine providence).",
+      "threshold": 0.3
+    },
+    "place": {
+      "description": "A physical location in the natural or built environment, including cities, regions, rivers, forests, houses, tombs, cemeteries, altars, and other spaces that can be inhabited, visited, or reached.",
+      "threshold": 0.3
+    },
+    "institution": {
+      "description": "A structured community or organized collective located in a physical place, such as a monastery, church, basilica, or royal palace. Distinguished from places by the presence of an affiliated community.",
+      "threshold": 0.3
+    }
+  }
+}
+
+

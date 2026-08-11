@@ -1,0 +1,76 @@
+{
+  "schema_name": "Hagiographic Entity Schema",
+  "schema_version": "2.0",
+  "description": "Entity extraction schema for historical and hagiographic texts, distinguishing persons, groups, institutions, places, objects, and divine entities. Includes relations between these entities, such as familial ties, ownership, and location.",
+  "model_version": "GhentCDH/Latin-Hagiography-NER",
+  "entities": {
+    "person": {
+      "description": "Any human being referred to by a personal name, kinship term (e.g., father, mother, son), social or institutional role (e.g., king, duke, monk, saint), or profession (e.g., blacksmith, writer). Includes saints, unless referring to major divine figures such as God, Christ, Mary, angels, or the Holy Spirit.",
+      "threshold": 0.5
+    },
+    "group": {
+      "description": "A collective entity composed of multiple people, expressed through collective nouns, adjectives, or pronouns (e.g., people, crowd, brothers, sisters, community, all, the faithful).",
+      "threshold": 0.5
+    },
+    "object": {
+      "description": "Inanimate objects, material items, bodily substances, or animals. Includes relics, garments, books, tears, oil, bodies, animals, and other tangible non-human, non-place entities.",
+      "threshold": 0.5
+    },
+    "divine_entity": {
+      "description": "Divine or supernatural beings and forces, including God, Christ, the Holy Spirit, angels, Mary, Joseph, and expressions of divine action or presence (e.g., divine mercy, divine providence).",
+      "threshold": 0.5
+    },
+    "place": {
+      "description": "A physical location in the natural or built environment, including cities, regions, rivers, forests, houses, tombs, cemeteries, altars, and other spaces that can be inhabited, visited, or reached.",
+      "threshold": 0.5
+    },
+    "institution": {
+      "description": "A structured community or organized collective located in a physical place, such as a monastery, church, basilica, or royal palace. Distinguished from places by the presence of an affiliated community. This institution may have a specific name or be referred to by a generic term (e.g., monastery, church, basilica, palace). If it has a specific name, this name should be included in the entity span.",
+      "threshold": 0.5
+    },
+    "pronoun": {
+      "description": "A word that substitutes for a noun or noun phrase, referring to a person or group. Includes personal pronouns (e.g., is, ea, id, ei, ii, eae), possessive pronouns (e.g., eius, eorum, earum), and reflexive pronouns (e.g., ipse, ipsa, suus, suum).",
+      "threshold": 0.5
+    }
+  },
+  "relations": {
+    "is_related_to": {
+      "description": "Connects two people who have a personal or familial relationship.",
+      "threshold": 0.5
+    },
+    "goes_to": {
+      "description": "Connects a person or group of people to a place or institution that they travel, move, or are going to. If an object is being transported, it connects the object to the place or institution it is being taken to.",
+      "threshold": 0.5
+    },
+    "comes_from": {
+      "description": "Connects a person to the place or institution where they originate, were born, or previously lived.",
+      "threshold": 0.5
+    },
+    "resides_at": {
+      "description": "Connects a person to the place or institution where they live or reside. It also connects a person to the place they are buried.",
+      "threshold": 0.5
+    },
+    "owns": {
+      "description": "Connects a person or group of people to an object that they own, possess, wear, carry, use.",
+      "threshold": 0.5
+    },
+    "is_owned_by": {
+      "description": "Connects a body (part) to the person who it belongs to.",
+      "threshold": 0.5
+    },
+    "is_located_at": {
+      "description": "Connects an institution, organization or object to the place where it is physically situated. It also connects a place (e.g. an altar or tomb) to the institution it is located in.",
+      "threshold": 0.5
+    },
+    "acts_on": {
+      "description": "Connects a person or group of people to a person or group of people that they act upon or towards, influence, or affect.",
+      "threshold": 0.5
+    },
+    "founds": {
+        "description": "Connects a person or group of people to an institution or place that they establish, create, or found.",
+        "threshold": 0.5
+    }
+  }
+}
+
+

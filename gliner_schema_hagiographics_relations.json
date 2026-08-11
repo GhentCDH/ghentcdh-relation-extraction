@@ -1,0 +1,38 @@
+{
+  "schema_name": "Hagiographic Entity Schema",
+  "schema_version": "2.0",
+  "description": "Entity extraction schema for historical and hagiographic texts, distinguishing persons, groups, institutions, places, objects, and divine entities.",
+  "model_version": "fastino/gliner2-multi-v1",
+  "relations": {
+    "is_related_to": {
+      "description": "Connects two people who have a personal or familial relationship.",
+      "threshold": 0.5
+    },
+    "goes_to": {
+      "description": "Connects a person or group of people to a place or institution that they travel, move, or are going to.",
+      "threshold": 0.5
+    },
+    "comes_from": {
+      "description": "Connects a person to the place or institution where they originate, were born, or previously lived.",
+      "threshold": 0.5
+    },
+    "resides_at": {
+      "description": "Connects a person to the place or institution where they live or reside.",
+      "threshold": 0.5
+    },
+    "owns": {
+      "description": "Connects a person or group of people to an object that they own, possess, wear, carry, use.",
+      "threshold": 0.5
+    },
+    "is_owned_by": {
+      "description": "Connects a body (part) to the person who it belongs to.",
+      "threshold": 0.5
+    },
+    "is_located_at": {
+      "description": "Connects an institution, organization or object to the place where it is physically situated.",
+      "threshold": 0.5
+    }
+  }
+}
+
+
